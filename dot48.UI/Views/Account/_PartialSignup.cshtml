@@ -1,0 +1,58 @@
+﻿@model  dot48.Application.Models.ViewModels.UserSignInViewModel
+
+<div class="dot48-form-signIn">
+    <div class="dot48-div-form  dot48-form-user form-login col-md-4">
+        <div class="panel panel-default dot48-singnIn-panel">
+
+            <h3 class="text-center">@ViewBag.Title</h3>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="panel-body">
+                <div style="display:none" id="result" class="alert
+                    alert-danger col-sm-12">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-user"></i>
+                    </span>
+                    @Html.EditorFor(model => model.UserName, new
+                    {
+                    htmlAttributes =
+                    new
+                    {
+                    @class = "form-control input-lg",
+                    placeholder =
+                    "User name",
+                    autofocus = true
+                    }
+                    })
+                    @Html.ValidationMessageFor(model => model.UserName, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-lock"></i>
+                    </span>
+                    @Html.EditorFor(model => model.Password, new
+                    {
+                    htmlAttributes
+                    = new { @class = "form-control input-lg", placeholder = "Password" }
+                    })
+                    @Html.ValidationMessageFor(model => model.Password, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+                <div class="form-group dot48-btn-signIn">
+                    <div class="controls">
+                        <input type="submit" value="Continue"
+                               class="btn btn-success btn-lg btn-block" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

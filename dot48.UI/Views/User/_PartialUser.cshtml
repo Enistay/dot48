@@ -1,0 +1,238 @@
+﻿@model dot48.Application.Models.ViewModels.UserViewModel
+   
+<div class="container">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="dot48-div-form dot48-form-user dot48-form-user-add form-login col-md-8">
+        <div class="panel panel-default">
+
+            <h3 class="text-center">@ViewBag.Title</h3>
+
+            <div style="padding-top:30px" class="panel-body">
+                <div style="display:none" id="result" class="alert
+                    alert-danger col-sm-12">
+                </div>
+
+                @Html.HiddenFor(model => model.IdUser)
+
+
+                <div class="input-group">
+                    @Html.LabelFor(model => model.Enable)
+                    <span> </span>
+                    @Html.CheckBoxFor(model => model.Enable)
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-user"></i>
+                    </span>
+                    @Html.EditorFor(model => model.CodeUser, new
+                    {
+                        htmlAttributes =
+                         new
+                         {
+                             type = "text",
+                             @class = "form-control input-lg",
+                             placeholder =
+                             "CodeUser",
+                             autofocus = true
+                         }
+                    })
+                    @Html.ValidationMessageFor(model => model.CodeUser, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-user"></i>
+                    </span>
+                    @Html.EditorFor(model => model.Name, new
+                    {
+                        htmlAttributes =
+                         new
+                         {
+                             type = "text",
+                             @class = "form-control input-lg",
+                             placeholder =
+                             "Nome",
+                             autofocus = true
+                         }
+                    })
+                    @Html.ValidationMessageFor(model => model.Name, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-user"></i>
+                    </span>
+                    @Html.EditorFor(model => model.AliasName, new
+                    {
+                        htmlAttributes =
+                         new
+                         {
+                             type = "text",
+                             @class = "form-control input-lg",
+                             placeholder =
+                             "AliasName",
+                             autofocus = true
+                         }
+                    })
+                    @Html.ValidationMessageFor(model => model.AliasName, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-envelope"></i>
+                    </span>
+                    @Html.EditorFor(model => model.Email, new
+                    {
+                        htmlAttributes =
+                         new
+                         {
+                             @class = "form-control input-lg",
+                             placeholder =
+                             "Email",
+                             autofocus = true
+                         }
+                    })
+                    @Html.ValidationMessageFor(model => model.Email, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-lock"></i>
+                    </span>
+                    @Html.EditorFor(model => model.Password, new
+                    {
+                        htmlAttributes
+                        = new { @class = "form-control input-lg", placeholder = "*********", alt="password"}
+                    })
+                    @Html.ValidationMessageFor(model => model.Password, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-wrench"></i>
+                    </span>
+
+                    @Html.DropDownListFor(model => model.IdProfile, null, new { @class = "form-control input-lg" })
+
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-user"></i>
+                    </span>
+                    @Html.EditorFor(model => model.Nif, new
+                    {
+                        htmlAttributes =
+                         new
+                         {
+                             type = "text",
+                             @class = "form-control input-lg",
+                             placeholder =
+                             "NIF",
+                             autofocus = true
+                         }
+                    })
+                    @Html.ValidationMessageFor(model => model.Nif, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon
+                        glyphicon-user"></i>
+                    </span>
+                    @Html.EditorFor(model => model.PhoneNumber, new
+                    {
+                        htmlAttributes =
+                         new
+                         {
+                             type = "text",
+                             @class = "form-control input-lg",
+                             placeholder =
+                             "Phone Number",
+                             autofocus = true
+                         }
+                    })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "",
+                    new { @class = "dot48-div-text-danger text-danger" })
+                </div>
+
+
+                @Html.HiddenFor(model => model.IdUserSetting)
+
+            <div class="dot48-user-checkbox-inline">
+                <div class="input-group">
+                    @Html.LabelFor(model => model.MO)
+                    <span> </span>
+                    @Html.CheckBoxFor(model => model.MO)
+                </div>
+
+                <div class="input-group">
+                    @Html.LabelFor(model => model.RecipientMO)
+                    <span> </span>
+                    @Html.CheckBoxFor(model => model.RecipientMO)
+                </div>
+
+                <div class="input-group">
+                    @Html.LabelFor(model => model.DIR)
+                    <span> </span>
+                    @Html.CheckBoxFor(model => model.DIR)
+                </div>
+
+                <div class="input-group">
+                    @Html.LabelFor(model => model.RecipientDIR)
+                    <span> </span>
+                    @Html.CheckBoxFor(model => model.RecipientDIR)
+                </div>
+            </div>
+
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon
+                        glyphicon-user"></i>
+                        </span>
+                        @Html.EditorFor(model => model.WorkHours, new
+                        {
+                            htmlAttributes =
+                             new
+                             {
+                                 type = "text",
+                                 @class = "form-control input-lg",
+                                 placeholder =
+                                 "Work Hours",
+                                 autofocus = true
+                             }
+                        })
+                        @Html.ValidationMessageFor(model => model.WorkHours, "",
+                        new { @class = "dot48-div-text-danger text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="dot48-form-btn controls">
+                            <input type="submit" value="Submeter"
+                                   class="btn btn-success btn-lg" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿
+@model  dot48.Application.Models.ViewModels.UserSignInViewModel
+@{
+    ViewBag.Title = "Sign In";
+    Layout = "~/Views/Shared/_LayoutSignIn.cshtml";
+}
+
+
+@using (Html.BeginForm("Signin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+    new { @class = "form-horizontal" }))
+{
+    @Html.Partial("_PartialSignup");
+}

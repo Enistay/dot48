@@ -1,0 +1,12 @@
+﻿@model dot48.Application.Models.ViewModels.UserViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Add", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+    new { @class = "form-horizontal" }))
+{
+    @Html.Partial("_PartialUser");
+}
+
